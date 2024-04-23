@@ -6,14 +6,18 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './pages/login/login.component';
 import { TodosComponent } from './pages/todos/todos.component';
-import { TodoItemComponent } from './components/todo-item/todo-item.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { TodoCardComponent } from './components/todo-card/todo-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     TodosComponent,
-    TodoItemComponent
+    NavbarComponent,
+    SidebarComponent,
+    TodoCardComponent
   ],
   imports: [
     BrowserModule,
