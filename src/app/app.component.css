@@ -1,0 +1,39 @@
+.auto-expand-input {
+  width: 600px; /* Initial width set to 600px */
+  height: 46px; /* Initial height set to 46px */
+  min-width: 0; /* This removes the default minimum width */
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out; /* Transition for both width and height */
+  box-sizing: border-box; /* Ensure padding is included in width and height calculations */
+}
+
+.auto-expand-input:focus {
+  width: 600px; /* Maintains initial width on focus for better control */
+  height: 135px; /* Expands height to 135px on focus */
+}
+
+
+.input-todo {
+  /*flex-shrink: 1;*/
+  appearance: none;
+  /*height: 3rem/* 48px */;
+  padding-left: 1rem/* 16px */;
+  padding-right: 1rem/* 16px */;
+  font-size: 0.875rem/* 14px */;
+  font-size: 1rem/* 16px */;
+  line-height: 1.25rem/* 20px */;
+  line-height: 2;
+  line-height: 1.5rem/* 24px */;
+  border-radius: var(--rounded-btn, 0.5rem/* 8px */);
+  border-width: 1px;
+  border-color: transparent;
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
+  outline: none;
+}
+
+.input-card{
+  /*flex-shrink: 1;*/
+  border-radius: var(--rounded-btn, 0.5rem/* 8px */);
+  background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
+
+}
