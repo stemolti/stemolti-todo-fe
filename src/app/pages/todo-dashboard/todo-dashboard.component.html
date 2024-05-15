@@ -30,27 +30,31 @@
     </div>
     <div class="p-2">
       <!-- Inputs Div -->
-      <div  class="inputs-group flex-wrap h-[48px] w-96 overflow-hidden border-slate-700 my-5 mx-auto">
+      <div  class="inputs-group flex-wrap h-[48px] w-96 overflow-visible border-slate-700 my-5 mx-auto">
         <input contenteditable="true" class="input-todo h-[48px] w-96 bg-transparent py-12px] px-[12px] outline-none w-96 text-base-content" placeholder="Titolo">
         <!-- Buttons Group -->
         <div class="flex flex-row justify-between p-2 outline-none">
-          <!-- Date Picker Icon-->
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-todo btn-todo-circle">
-              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
-                fill="currentColor">
-                <path d="M0 0h24v24H0z" fill="none" />
-                <path
-                  d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
-                <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
-              </svg>
-            </div>
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-              <li><a>Item 1</a></li>
-              <li><a>Item 2</a></li>
-            </ul>
-          </div>
-
+          <!-- -->
+<div class="dropdown" #dropdown>
+  <div tabindex="0" role="button" class="btn btn-todo btn-todo-circle" (click)="toggleDropdown(dropdownMenu)">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor">
+      <path d="M0 0h24v24H0z" fill="none" />
+      <path
+        d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
+      <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+    </svg>
+  </div>
+  <div #dropdownMenu tabindex="0" class="dropdown-content menu z-[1] p-2 shadow bg-base-100 rounded-box w-52" [class.hidden]="!isDropdownOpen">
+    <div class="relative max-w-sm">
+      <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+          </svg>
+      </div>
+      <input datepicker datepicker-buttons datepicker-autoselect-today type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+    </div>
+  </div>
+</div>
           <!-- Close Button -->
           <div>
             <div class="btn btn-todo">Close</div>

@@ -36,4 +36,14 @@ export class TodoDashboardComponent implements OnInit {
   collapse(){
     console.log('col')
   }
+
+  isDropdownOpen: boolean = false;
+
+
+  toggleDropdown(dropdownMenu: HTMLDivElement) {
+    this.isDropdownOpen = !this.isDropdownOpen;
+    if (this.isDropdownOpen) {
+      dropdownMenu.focus();
+    }
+  }
 }
