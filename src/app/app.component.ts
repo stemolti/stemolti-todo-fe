@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'stemolti-todo-fe';
+
+  isExpanded: boolean = false;
+
+  expandContainer() {
+    this.isExpanded = true;
+  }
+
+  collapseContainer() {
+    this.isExpanded = false;
+  }
+
 }

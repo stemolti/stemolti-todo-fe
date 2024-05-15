@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Todo } from '../../entities/todo.entity';
 
 @Component({
   selector: 'app-todo-card',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './todo-card.component.css'
 })
 export class TodoCardComponent {
+  @Input() todo!: Todo;
 
 }

@@ -5,21 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './pages/login/login.component';
-import { TodosComponent } from './pages/todos/todos.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TodoCardComponent } from './components/todo-card/todo-card.component';
+import { TodoDashboardComponent } from './pages/todo-dashboard/todo-dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    TodosComponent,
     NavbarComponent,
     SidebarComponent,
-    TodoCardComponent
+    TodoCardComponent,
+    TodoDashboardComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule

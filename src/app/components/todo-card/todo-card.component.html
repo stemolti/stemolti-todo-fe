@@ -1,17 +1,16 @@
 <div class="card bg-base-100 border-slate-700 min-w-64 h-full">
   <div class="card-body">
-    <h2 class="card-title text-base-content"></h2>
+    <h2 class="card-title text-base-content">{{ todo.title }}</h2>
     <div class="card-actions justify-content-between">
       <div class="space-x-2 justify-start">
         <input type="checkbox" checked="checked" class="checkbox checkbox-xs" />
-        <div class="badge badge-neutral">expired</div>
+        <div class="badge badge-neutral" *ngIf="todo.expired">Expired</div>
       </div>
       <div class="justify-end">
-        <h5 class="text-sm text-base-content">
-          30 Aprile 24
+        <h5 class="text-sm text-base-content" *ngIf="todo.dueDate">
+          Due date: {{ todo.dueDate | date }}
         </h5>
       </div>
-
     </div>
   </div>
 

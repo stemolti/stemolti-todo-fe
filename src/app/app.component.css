@@ -1,39 +1,74 @@
-.auto-expand-input {
-  width: 600px; /* Initial width set to 600px */
-  height: 46px; /* Initial height set to 46px */
-  min-width: 0; /* This removes the default minimum width */
-  transition: width 0.2s ease-in-out, height 0.2s ease-in-out; /* Transition for both width and height */
-  box-sizing: border-box; /* Ensure padding is included in width and height calculations */
-}
-
-.auto-expand-input:focus {
-  width: 600px; /* Maintains initial width on focus for better control */
+.expand {
   height: 135px; /* Expands height to 135px on focus */
 }
-
 
 .input-todo {
   /*flex-shrink: 1;*/
   appearance: none;
-  /*height: 3rem/* 48px */;
-  padding-left: 1rem/* 16px */;
-  padding-right: 1rem/* 16px */;
-  font-size: 0.875rem/* 14px */;
-  font-size: 1rem/* 16px */;
-  line-height: 1.25rem/* 20px */;
+  height: 3rem /* 48px */;
+  padding-left: 1rem /* 16px */;
+  padding-right: 1rem /* 16px */;
+  font-size: 0.875rem /* 14px */;
+  font-size: 1rem /* 16px */;
+  line-height: 1.25rem /* 20px */;
   line-height: 2;
-  line-height: 1.5rem/* 24px */;
-  border-radius: var(--rounded-btn, 0.5rem/* 8px */);
+  line-height: 1.5rem /* 24px */;
+  border-radius: var(--rounded-btn, 0.5rem /* 8px */);
   border-width: 1px;
   border-color: transparent;
   --tw-bg-opacity: 1;
-  background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
+  background-color: var(--fallback-b1, oklch(var(--b1) / var(--tw-bg-opacity)));
   outline: none;
 }
 
-.input-card{
-  /*flex-shrink: 1;*/
-  border-radius: var(--rounded-btn, 0.5rem/* 8px */);
-  background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
 
-}
+/*
+
+      <!-- Container of Inputs -->
+      <div class="flex flex-col input-card w-fit my-4 border-slate-700" [ngClass]="{'expand': isExpanded}">
+        <!-- First Input-->
+        <input type="text" placeholder="Titolo" class="input text-base-content " [ngClass]="{'collapse': !isExpanded}" />
+        <!-- Second Input-->
+        <input type="text" placeholder="Scrivi una nota..."
+          class="input w-80 text-base-content" (focus)="expandContainer()" (blur)="collapseContainer()"/>
+        <!-- Buttons Group -->
+        <div class="flex flex-row justify-between p-2" [ngClass]="{'collapse': !isExpanded}">
+          <!-- Date Picker Icon-->
+          <div class="dropdown">
+            <div role="button" class="btn btn-todo btn-todo-circle">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
+                <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+              </svg>
+            </div>
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a>Item 1</a></li>
+              <li><a>Item 2</a></li>
+            </ul>
+          </div>
+   
+          <!-- Close Button -->
+          <div>
+            <div class="btn btn-todo">Close</div>
+          </div>
+        </div>
+      </div>
+
+  <div class="flex-wrap">
+    <!-- Cards-->
+    <div class="flex flex-wrap justify-center gap-2">
+      <app-todo-card></app-todo-card>
+      <app-todo-card></app-todo-card>
+      <app-todo-card></app-todo-card>
+      <app-todo-card></app-todo-card>
+      <app-todo-card></app-todo-card>
+      <app-todo-card></app-todo-card>
+    </div>
+  </div>
+</div>
+
+
+
+*/
