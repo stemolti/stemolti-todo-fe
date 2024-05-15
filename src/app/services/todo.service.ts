@@ -15,15 +15,5 @@ export class TodoService {
     return this.http.get<Todo[]>(this.apiUrl, {});
   }
 
-  addTodo(newTodo: Todo): Observable<Todo> {
-    return this.http.post<Todo>(this.apiUrl, newTodo);
-  }
 
-  checked(id: string): Observable<Todo> {
-    return this.http.patch<Todo>(`${this.apiUrl}/${id}/check`, {});
-  }
-
-  notChecked(id: string): Observable<Todo> {
-    return this.http.patch<Todo>(`${this.apiUrl}/${id}/uncheck`, {});
-  }
 }
